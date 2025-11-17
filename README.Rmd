@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# SteamGamesReviewFilter
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The goal of SteamGamesReviewFilter is to split a column of review data derived from the `steam_games` data set into three pieces of data via delimiters. These pieces are:
+
+\- `_rating`: Overall rating of game. String. Ex: Positive, Negative, Mixed.
+
+\- `_reviews`: Number of reviews game received. Numeric. Ex: 183, 18, 67392.
+
+\- `percent_positive_`: % of reviews that are positive. Numeric. Ex: 98, 12, 3.
+
+It is expected that the review data is formatted with specific delimiters present in the `steam_games` data.
+
+## Installation
+
+You can install the development version of SteamGamesReviewFilter from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("stat545ubc-2025/assignment-b2-Jessica-Sun")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(SteamGamesReviewFilter)
+library(datateachr)
+library(tidyverse)
+library(stringr)
+library(forcats)
+
+split_steam_reviews(steam_games, "recent")
+split_steam_reviews(steam_games, "all")
+```

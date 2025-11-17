@@ -34,3 +34,8 @@ set into three pieces of data via delimiters. These pieces are:
 It is expected that the review data is formatted with specific delimiters
 present in the steam_games data.
 }
+\examples{
+split_steam_reviews(steam_games, "recent")
+split_steam_reviews(steam_games, "all")
+
+}

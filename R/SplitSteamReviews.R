@@ -21,6 +21,10 @@
 #'         "_reviews" column has been split into "_ratings", "_reviews", and
 #'          "percent_positive".
 #'
+#' @examples
+#' split_steam_reviews(steam_games, "recent")
+#' split_steam_reviews(steam_games, "all")
+#'
 #' @export split_steam_reviews
 
 split_steam_reviews <- function(data, time){
